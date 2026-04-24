@@ -168,7 +168,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 /* ABOUT */
 .about-bio{font-size:16px;color:var(--ink);line-height:1.7;margin-bottom:32px}
 .about-bio strong{font-weight:600}
-.about-logos{display:flex;align-items:center;gap:32px;margin-bottom:40px;opacity:.7}
+.about-logos{display:flex;align-items:center;gap:32px;margin-bottom:40px;opacity:1}
 .about-logos img{height:36px;width:auto}
 .about-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;padding-top:32px;border-top:1px solid var(--pigeon)}
 .about-meta-label{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:6px}
@@ -472,7 +472,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
       </div>
       <div class="about-logos">
         <img src="hks-logo.svg" alt="Harvard Kennedy School">
-        <img src="mila-logo.png" alt="Mila - Quebec Artificial Intelligence Institute">
+        <div><div class="about-meta-label">Prepared For</div><div class="about-meta-value">Mila - Quebec Artificial Intelligence Institute</div><img src="mila-logo.png" alt="Mila" style="height:28px;margin-top:8px"></div>
       </div>
     </div>
     <div class="about-meta fade-in">
