@@ -99,7 +99,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 .findings-wrap{position:relative}
 .findings-track{display:flex;gap:20px;padding:0 80px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
 .findings-track::-webkit-scrollbar{display:none}
-.findings-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid var(--pigeon);background:var(--warm-white);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.findings-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid var(--pigeon);background:var(--warm-white);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,opacity .3s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .findings-arrow:hover{background:#fff;border-color:var(--teal);color:var(--teal)}
 .findings-arrow-left{left:16px}
 .findings-arrow-right{right:16px}
@@ -170,7 +170,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 .about-bio strong{font-weight:600}
 .about-logos{display:flex;align-items:center;gap:32px;margin-bottom:40px;opacity:.7}
 .about-logos img{height:36px;width:auto}
-.about-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-top:32px;border-top:1px solid var(--pigeon)}
+.about-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;padding-top:32px;border-top:1px solid var(--pigeon)}
 .about-meta-label{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:6px}
 .about-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
 .about-meta-value a{color:var(--teal);text-decoration:none}
@@ -211,7 +211,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 <nav class="nav">
   <div class="nav-left">
     <div class="nav-leaf"><svg viewBox="0 0 100 100"><path d="M50 0L53.5 18.5 62 12l-3 14 16-6-8 12 18 2-14 8 10 12H66l2 14-10-6-8 14-8-14-10 6 2-14H19l10-12-14-8 18-2-8-12 16 6-3-14 8.5 6.5z"/></svg></div>
-    <a href="#" class="nav-title">AI Early Warning</a>
+    <a href="#" class="nav-title">Canada AI Early Warning</a>
   </div>
   <div class="nav-links">
     <a href="#problem">The Problem</a>
@@ -228,7 +228,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
   <canvas id="heroCanvas"></canvas>
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">Policy Analysis &mdash; April 2026</div>
+      <div class="hero-eyebrow">Policy Analysis - April 2026</div>
       <h1>Building Canada's Early Warning and Response System for AI Job Displacement</h1>
       <p class="hero-sub">A proposal for how Canada can detect AI-driven labour displacement before it reaches crisis scale, and how Mila can shape the national response.</p>
       <div class="hero-buttons">
@@ -317,7 +317,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
     </div>
     <div style="max-width:720px;margin:0 auto">
       <div class="numbered-card fade-in" style="border-style:dashed;margin-bottom:0;border-radius:6px 6px 0 0;background:rgba(29,158,117,.03)">
-        <div class="card-number">Highest value — longest lead time</div>
+        <div class="card-number">Optional</div>
         <div class="card-title">AI Usage Statistics from Frontier Labs</div>
         <div class="card-body">Forward-looking signal: shows where automation pressure is building. Requires voluntary data-sharing agreements. Earliest realistic delivery: early 2027. Open-weight models create a 20-30% blind spot.</div>
       </div>
@@ -355,9 +355,9 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
       <div class="finding-card"><div class="finding-num">01</div><div class="finding-title">At-Risk Early-Career Workers</div><div class="finding-body">Roughly 66,705 workers aged 20 to 24 sit inside seven occupations where U.S. evidence suggests AI-driven displacement is emerging. Customer service representatives, software developers, and financial service reps account for 78% of the cohort. Two-thirds are concentrated in Ontario and Quebec.</div></div>
       <div class="finding-card"><div class="finding-num">02</div><div class="finding-title">The Coverage Gap</div><div class="finding-body">Open-weight models account for an estimated 20 to 30% of all AI usage, and when users run these models on their own hardware, no usage statistics are generated. Any system anchored solely on frontier lab data is structurally blind to this segment.</div></div>
       <div class="finding-card"><div class="finding-num">03</div><div class="finding-title">The Single-Lab Skew</div><div class="finding-body">Coding-task share differs by a factor of nine between Claude (37%) and ChatGPT (4.2%). Relying on one provider's data as ground truth creates a distorted picture of what work AI is absorbing across the economy.</div></div>
-      <div class="finding-card"><div class="finding-num">04</div><div class="finding-title">Canada's Survey Gaps</div><div class="finding-body">Labour Force Survey cells are too small to detect cohort-level shocks, and the Census operates on a five-year cycle. Neither was designed for a labour market that can shift in months. Payroll data closes this gap.</div></div>
-      <div class="finding-card"><div class="finding-num">05</div><div class="finding-title">CERB's Warning</div><div class="finding-body">$4.6 billion in confirmed overpayments traced to the inability to verify employment status in real time. The Auditor General explicitly recommended developing a real-time payroll system. The next disruption will arrive faster than the design cycle that produced CERB.</div></div>
-      <div class="finding-card"><div class="finding-num">06</div><div class="finding-title">The EI Eligibility Gap</div><div class="finding-body">Employment Insurance requires prior insurable hours. Young workers entering the labour market for the first time fall outside it. They are the cohort most exposed to an AI-driven hiring freeze, and the safety net does not reach them.</div></div>
+      <div class="finding-card"><div class="finding-num">04</div><div class="finding-title">Canada's Survey Gaps</div><div class="finding-body">Labour Force Survey cells are too small to detect cohort-level shocks, and the Census operates on a five-year cycle. Payroll data closes this gap.</div></div>
+      <div class="finding-card"><div class="finding-num">05</div><div class="finding-title">CERB's Warning</div><div class="finding-body">$4.6 billion in confirmed overpayments traced to the inability to verify employment status in real time. The Auditor General explicitly recommended developing a real-time payroll system.</div></div>
+      <div class="finding-card"><div class="finding-num">06</div><div class="finding-title">The EI Eligibility Gap</div><div class="finding-body">Employment Insurance requires prior insurable hours. Young workers entering the labour market for the first time fall outside it.</div></div>
     </div>
     <button class="findings-arrow findings-arrow-right" id="findingsRight">&rarr;</button>
   </div>
@@ -429,14 +429,6 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
   </div>
 </section>
 
-<!-- PULL QUOTE -->
-<section class="section">
-  <div class="pull-quote fade-in">
-    <p>"If the Minister of Industry says, 'We need faster and better answers on this, and we need you to engage with Mila,' that as a nudging function in government will be very important."</p>
-    <cite>Tyler Meredith, former Senior Economic Advisor to the Prime Minister</cite>
-  </div>
-</section>
-
 <!-- RECOMMENDATIONS -->
 <section class="section" id="recommendations">
   <div class="section-wide">
@@ -476,16 +468,16 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
       <div class="eyebrow">About</div>
       <h2>About the Author</h2>
       <div style="display:flex;gap:24px;align-items:flex-start;margin-bottom:32px">
-  <img src="headshot.jpg" alt="Rod Moshtagi" style="width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0">
-  <p class="about-bio" style="margin-bottom:0"><strong>Rod Moshtagi</strong> is an MPP candidate at the Harvard Kennedy School and a former consultant at Employment and Social Development Canada (ESDC), where his work focused on labour market information systems and benefit program design.</p>
+        <img src="Headshot.jpeg" alt="Rod Moshtagi" style="width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0">
+        <p class="about-bio" style="margin-bottom:0"><strong>Rod Moshtagi</strong> is an MPP candidate at the Harvard Kennedy School and a former management consultant at PwC, where his work included engagements with Employment and Social Development Canada (ESDC) on labour market information systems and benefit program design.</p>
+      </div>
       <div class="about-logos">
         <img src="hks-logo.svg" alt="Harvard Kennedy School">
         <img src="mila-logo.png" alt="Mila - Quebec Artificial Intelligence Institute">
       </div>
     </div>
     <div class="about-meta fade-in">
-      <div><div class="about-meta-label">Prepared For</div><div class="about-meta-value">Mila &mdash; Quebec Artificial Intelligence Institute</div></div>
-      <div><div class="about-meta-label">Faculty Advisor</div><div class="about-meta-value">Sheila Jasanoff</div></div>
+      <div><div class="about-meta-label">Prepared For</div><div class="about-meta-value">Mila - Quebec Artificial Intelligence Institute</div></div>
       <div><div class="about-meta-label">Author Site</div><div class="about-meta-value"><a href="https://rodmoshtagi.com" target="_blank">rodmoshtagi.com &rarr;</a></div></div>
     </div>
   </div>
@@ -596,6 +588,7 @@ document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
     const idx=Math.min(5,Math.floor(p*6));
     currentIdx=idx;
     dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+    updateArrows();
   });
 })();
 
