@@ -25,7 +25,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}
 .nav-left{display:flex;align-items:center;gap:10px}
-.nav-leaf{width:18px;height:18px;fill:var(--coral);opacity:.8}
+.nav-leaf svg{width:16px;height:16px;fill:var(--coral);opacity:.8;display:block}
 .nav-title{font-family:var(--font-b);font-weight:500;font-size:15px;color:#fff;text-decoration:none;letter-spacing:.02em}
 .nav-links{display:flex;gap:32px}
 .nav-links a{font-size:13px;color:var(--pigeon);text-decoration:none;transition:color .2s}
@@ -34,7 +34,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 /* HERO */
 .hero{background:var(--navy);padding:140px 40px 100px;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden}
 #heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
-.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:center}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 300px;gap:64px;align-items:center}
 .hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
 .hero h1{font-family:var(--font-d);font-size:36px;font-weight:700;line-height:1.18;color:#fff;margin-bottom:20px}
 .hero-sub{font-size:16px;color:var(--pigeon);line-height:1.65;margin-bottom:36px;max-width:500px}
@@ -43,13 +43,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 .btn-p:hover{background:var(--teal-muted)}
 .btn-s{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:transparent;color:#fff;font-size:14px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:6px;transition:border-color .2s}
 .btn-s:hover{border-color:rgba(255,255,255,.5)}
-.hero-cover{background:rgba(255,255,255,.04);border-radius:8px;padding:32px 26px;border:1px solid rgba(255,255,255,.07)}
-.hero-cover-ey{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.hero-cover-t{font-family:var(--font-d);font-size:19px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:72px}
-.hero-cover-meta{font-family:var(--font-m);font-size:11px;color:var(--pigeon);letter-spacing:.05em;margin-bottom:6px}
-.hero-cover-author{font-size:13px;color:var(--pigeon)}
-.hero-cover-bar{width:40px;height:3px;background:var(--teal);margin-top:16px;border-radius:2px}
-.hero-leaf{position:absolute;bottom:40px;right:60px;width:80px;height:80px;fill:rgba(232,115,90,.06);z-index:0}
+.hero-cover-img{width:100%;border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 
 /* SECTIONS */
 .section{padding:96px 40px}
@@ -77,13 +71,13 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 
 /* PROVINCE MAP */
 .province-map{margin-top:24px;width:100%;max-width:500px}
-.province-map .prov{fill:rgba(255,255,255,.1);stroke:rgba(255,255,255,.15);stroke-width:.5;transition:fill .6s}
-.province-map .prov.on{fill:var(--coral);opacity:.7}
-.province-map .prov.qc{fill:var(--teal);opacity:.7}
-.province-map .prov-label{font-family:var(--font-m);font-size:10px;fill:var(--pigeon);text-anchor:middle}
-.province-map .prov-label.highlight{fill:#fff;font-weight:500;font-size:11px}
+.prov{fill:rgba(255,255,255,.1);stroke:rgba(255,255,255,.15);stroke-width:.5;transition:fill .6s}
+.prov.on{fill:var(--coral);opacity:.7}
+.prov.qc{fill:var(--teal);opacity:.7}
+.prov-label{font-family:var(--font-m);font-size:10px;fill:var(--pigeon);text-anchor:middle}
+.prov-label.highlight{fill:#fff;font-weight:500;font-size:11px}
 
-/* OCCUPATION BARS (inside scroll stats) */
+/* OCCUPATION BARS */
 .occ-bars{margin-top:20px;width:100%;max-width:520px;text-align:left}
 .occ-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .occ-name{font-size:11px;color:var(--pigeon);width:200px;text-align:right;flex-shrink:0}
@@ -103,7 +97,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 .findings-section{padding:96px 0;overflow:hidden}
 .findings-header{padding:0 40px;max-width:960px;margin:0 auto 40px}
 .findings-wrap{position:relative}
-.findings-track{display:flex;gap:20px;padding:0 60px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
+.findings-track{display:flex;gap:20px;padding:0 80px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
 .findings-track::-webkit-scrollbar{display:none}
 .findings-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:36px;height:36px;border-radius:50%;border:1px solid var(--pigeon);background:var(--warm-white);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .findings-arrow:hover{background:#fff;border-color:var(--teal);color:var(--teal)}
@@ -154,7 +148,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 .timeline-strip{max-width:960px;margin:48px auto 0;position:relative;padding:32px 0 0}
 .timeline-line{height:2px;background:var(--pigeon);opacity:.3;position:relative}
 .timeline-items{display:flex;justify-content:space-between;margin-top:-7px;position:relative}
-.timeline-item{display:flex;flex-direction:column;align-items:center;width:160px}
+.timeline-item{display:flex;flex-direction:column;align-items:center;width:140px}
 .timeline-marker{width:12px;height:12px;border-radius:50%;border:2px solid var(--teal);background:var(--warm-white);margin-bottom:10px}
 .timeline-marker.urgent{border-color:var(--coral);background:var(--coral-light)}
 .timeline-date{font-family:var(--font-m);font-size:10px;color:var(--teal);margin-bottom:4px}
@@ -172,9 +166,11 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 .rec-note{font-size:14px;font-style:italic;color:var(--warm-gray);margin-top:32px;line-height:1.6}
 
 /* ABOUT */
-.about-bio{font-size:16px;color:var(--ink);line-height:1.7}
+.about-bio{font-size:16px;color:var(--ink);line-height:1.7;margin-bottom:32px}
 .about-bio strong{font-weight:600}
-.about-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-top:32px;border-top:1px solid var(--pigeon);margin-top:48px}
+.about-logos{display:flex;align-items:center;gap:32px;margin-bottom:40px;opacity:.7}
+.about-logos img{height:36px;width:auto}
+.about-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-top:32px;border-top:1px solid var(--pigeon)}
 .about-meta-label{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:6px}
 .about-meta-value{font-size:14px;color:var(--ink);line-height:1.5}
 .about-meta-value a{color:var(--teal);text-decoration:none}
@@ -196,11 +192,12 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 
 @media(max-width:768px){
   .nav{padding:0 20px}.nav-links{display:none}
-  .hero{padding:100px 20px 60px;min-height:auto}.hero-inner{grid-template-columns:1fr}.hero-cover{display:none}
+  .hero{padding:100px 20px 60px;min-height:auto}.hero-inner{grid-template-columns:1fr;gap:32px}.hero-cover-img{max-width:240px}
   .hero h1{font-size:26px}.section{padding:64px 20px}
   .stat-big{font-size:48px}.occ-name{width:120px;font-size:10px}
   .data-grid{grid-template-columns:1fr}.finding-card{flex:0 0 300px}
-  .about-meta{grid-template-columns:1fr;gap:20px}.footer-inner{flex-direction:column;gap:32px}
+  .about-meta{grid-template-columns:1fr;gap:20px}.about-logos{flex-wrap:wrap}
+  .footer-inner{flex-direction:column;gap:32px}
   .timeline-items{flex-direction:column;gap:20px;align-items:flex-start;margin-top:12px}
   .timeline-line{display:none}.timeline-item{flex-direction:row;width:auto;gap:10px}
   .timeline-marker{margin-bottom:0}
@@ -209,18 +206,11 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 </head>
 <body>
 
-<!-- MAPLE LEAF SVG (reusable) -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <symbol id="maple" viewBox="0 0 64 64">
-    <path d="M32 2L28 14l-12-4 6 12-14 2 10 8-6 12h12l0 10 8-8 8 8 0-10h12l-6-12 10-8-14-2 6-12-12 4z"/>
-  </symbol>
-</svg>
-
 <div class="progress-bar" id="progressBar"></div>
 
 <nav class="nav">
   <div class="nav-left">
-    <svg class="nav-leaf"><use href="#maple"/></svg>
+    <div class="nav-leaf"><svg viewBox="0 0 100 100"><path d="M50 0L53.5 18.5 62 12l-3 14 16-6-8 12 18 2-14 8 10 12H66l2 14-10-6-8 14-8-14-10 6 2-14H19l10-12-14-8 18-2-8-12 16 6-3-14 8.5 6.5z"/></svg></div>
     <a href="#" class="nav-title">AI Early Warning</a>
   </div>
   <div class="nav-links">
@@ -236,7 +226,6 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
 <!-- HERO -->
 <section class="hero">
   <canvas id="heroCanvas"></canvas>
-  <svg class="hero-leaf"><use href="#maple"/></svg>
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow">Policy Analysis &mdash; April 2026</div>
@@ -247,30 +236,24 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
         <a href="#" class="btn-s">&darr; Download Executive Summary</a>
       </div>
     </div>
-    <div class="hero-cover">
-      <div class="hero-cover-ey">Mila Policy Brief</div>
-      <div class="hero-cover-t">Building Canada's Early Warning and Response System for AI Job Displacement</div>
-      <div class="hero-cover-meta">APRIL 2026</div>
-      <div class="hero-cover-author">Rod Moshtagi &middot; Harvard Kennedy School</div>
-      <div class="hero-cover-bar"></div>
+    <div>
+      <img src="cover.png" alt="Report cover: Building Canada's Early Warning and Response System for AI Job Displacement" class="hero-cover-img">
     </div>
   </div>
 </section>
 
-<!-- SCROLL STATS: $25M, 66705 + occ bars, 43.4% + map -->
+<!-- SCROLL STATS -->
 <section class="stats-section" id="problem">
   <div class="stats-scroll" id="statsScroll">
     <div class="stats-sticky">
-      <!-- Slide 0: $25M -->
       <div class="stat-slide" id="stat0">
         <div class="eyebrow" style="color:var(--teal);margin-bottom:24px">The Problem</div>
         <div class="stat-big gold">$25M</div>
         <div class="stat-desc">allocated to TechStat in Budget 2025 to measure AI's impact on the Canadian labour force. As of April 2026, no formal tracking framework is operational.</div>
       </div>
-      <!-- Slide 1: 66,705 + occupation bars -->
       <div class="stat-slide" id="stat1">
         <div class="stat-big coral">66,705</div>
-        <div class="stat-desc">early-career Canadian workers aged 20 to 24 across seven occupations already showing signs of AI-driven contraction.</div>
+        <div class="stat-desc">early-career Canadian workers aged 20 to 24 across seven occupations where U.S. evidence suggests AI-driven displacement is emerging. These workers sit at the intersection of high AI exposure and low labour market experience.</div>
         <div class="occ-bars" id="occBars">
           <div class="occ-row"><span class="occ-name">Customer service reps</span><div class="occ-track"><div class="occ-fill" style="width:0%" data-w="100%"></div></div><span class="occ-val">29,605</span></div>
           <div class="occ-row"><span class="occ-name">Financial service reps</span><div class="occ-track"><div class="occ-fill" style="width:0%" data-w="32%"></div></div><span class="occ-val">9,400</span></div>
@@ -281,41 +264,38 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
           <div class="occ-row"><span class="occ-name">Travel counsellors</span><div class="occ-track"><div class="occ-fill" style="width:0%" data-w="1%"></div></div><span class="occ-val">305</span></div>
         </div>
       </div>
-      <!-- Slide 2: 43.4% + province map -->
       <div class="stat-slide" id="stat2">
         <div class="stat-big coral">43.4%</div>
-        <div class="stat-desc">of the canary cohort is concentrated in Ontario. Quebec holds another 23.6%. Together, two provinces account for two-thirds of Canada's most at-risk early-career workers.</div>
+        <div class="stat-desc">of these at-risk early-career workers are concentrated in Ontario. Quebec holds another 23.6%. Together, two provinces account for two-thirds of Canada's most exposed young workers.</div>
         <svg class="province-map" viewBox="0 0 500 300" id="provMap">
-          <!-- Simplified province shapes -->
-          <rect class="prov" x="20" y="120" width="50" height="80" rx="4"/><!-- BC -->
+          <rect class="prov" x="20" y="120" width="50" height="80" rx="4"/>
           <text class="prov-label" x="45" y="175">BC</text>
           <text class="prov-label" x="45" y="190" style="font-size:8px">12.5%</text>
-          <rect class="prov" x="80" y="130" width="50" height="70" rx="4"/><!-- AB -->
+          <rect class="prov" x="80" y="130" width="50" height="70" rx="4"/>
           <text class="prov-label" x="105" y="175">AB</text>
           <text class="prov-label" x="105" y="190" style="font-size:8px">7.0%</text>
-          <rect class="prov" x="140" y="140" width="40" height="60" rx="4"/><!-- SK -->
+          <rect class="prov" x="140" y="140" width="40" height="60" rx="4"/>
           <text class="prov-label" x="160" y="175">SK</text>
-          <rect class="prov" x="190" y="140" width="40" height="60" rx="4"/><!-- MB -->
+          <rect class="prov" x="190" y="140" width="40" height="60" rx="4"/>
           <text class="prov-label" x="210" y="175">MB</text>
           <text class="prov-label" x="210" y="190" style="font-size:8px">5.1%</text>
-          <rect class="prov on" x="240" y="100" width="90" height="100" rx="4"/><!-- ON -->
+          <rect class="prov on" x="240" y="100" width="90" height="100" rx="4"/>
           <text class="prov-label highlight" x="285" y="150">ON</text>
           <text class="prov-label highlight" x="285" y="168" style="font-size:12px">43.4%</text>
-          <rect class="prov qc" x="340" y="90" width="70" height="100" rx="4"/><!-- QC -->
+          <rect class="prov qc" x="340" y="90" width="70" height="100" rx="4"/>
           <text class="prov-label highlight" x="375" y="140">QC</text>
           <text class="prov-label highlight" x="375" y="158" style="font-size:12px">23.6%</text>
-          <rect class="prov" x="420" y="130" width="25" height="30" rx="3"/><!-- NB -->
+          <rect class="prov" x="420" y="130" width="25" height="30" rx="3"/>
           <text class="prov-label" x="432" y="150" style="font-size:7px">NB</text>
-          <rect class="prov" x="450" y="120" width="25" height="30" rx="3"/><!-- NS -->
+          <rect class="prov" x="450" y="120" width="25" height="30" rx="3"/>
           <text class="prov-label" x="462" y="140" style="font-size:7px">NS</text>
-          <rect class="prov" x="448" y="100" width="15" height="15" rx="2"/><!-- PEI -->
+          <rect class="prov" x="448" y="100" width="15" height="15" rx="2"/>
           <text class="prov-label" x="455" y="112" style="font-size:6px">PE</text>
-          <rect class="prov" x="400" y="60" width="60" height="50" rx="4"/><!-- NL -->
+          <rect class="prov" x="400" y="60" width="60" height="50" rx="4"/>
           <text class="prov-label" x="430" y="90" style="font-size:7px">NL</text>
-          <!-- Territories -->
-          <rect class="prov" x="60" y="30" width="60" height="50" rx="4"/><!-- YT -->
-          <rect class="prov" x="130" y="20" width="80" height="60" rx="4"/><!-- NT -->
-          <rect class="prov" x="220" y="10" width="100" height="60" rx="4"/><!-- NU -->
+          <rect class="prov" x="60" y="30" width="60" height="50" rx="4"/>
+          <rect class="prov" x="130" y="20" width="80" height="60" rx="4"/>
+          <rect class="prov" x="220" y="10" width="100" height="60" rx="4"/>
         </svg>
       </div>
       <div class="stat-dots">
@@ -337,7 +317,7 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
     </div>
     <div style="max-width:720px;margin:0 auto">
       <div class="numbered-card fade-in" style="border-style:dashed;margin-bottom:0;border-radius:6px 6px 0 0;background:rgba(29,158,117,.03)">
-        <div class="card-number">Optional</div>
+        <div class="card-number">Highest value — longest lead time</div>
         <div class="card-title">AI Usage Statistics from Frontier Labs</div>
         <div class="card-body">Forward-looking signal: shows where automation pressure is building. Requires voluntary data-sharing agreements. Earliest realistic delivery: early 2027. Open-weight models create a 20-30% blind spot.</div>
       </div>
@@ -366,13 +346,13 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
     <div class="fade-in">
       <div class="eyebrow">Key Findings</div>
       <h2>What the Analysis Reveals</h2>
-      <p class="section-intro" style="margin-bottom:0">Six findings drawn from the analysis. Together they describe the emerging displacement signal and the gaps in Canada's ability to detect and respond to it.</p>
+      <p class="section-intro" style="margin-bottom:0">Six findings from the analysis. Together they describe the emerging displacement signal and the gaps in Canada's ability to detect and respond to it.</p>
     </div>
   </div>
   <div class="findings-wrap">
     <button class="findings-arrow findings-arrow-left" id="findingsLeft">&larr;</button>
     <div class="findings-track" id="findingsTrack">
-      <div class="finding-card"><div class="finding-num">01</div><div class="finding-title">The Canary Cohort</div><div class="finding-body">Roughly 66,705 early-career workers sit inside seven occupations that already show measurable AI-driven contraction. Customer service reps, software developers, and financial service reps account for 78% of the cohort. Two-thirds work in Ontario and Quebec.</div></div>
+      <div class="finding-card"><div class="finding-num">01</div><div class="finding-title">At-Risk Early-Career Workers</div><div class="finding-body">Roughly 66,705 workers aged 20 to 24 sit inside seven occupations where U.S. evidence suggests AI-driven displacement is emerging. Customer service representatives, software developers, and financial service reps account for 78% of the cohort. Two-thirds are concentrated in Ontario and Quebec.</div></div>
       <div class="finding-card"><div class="finding-num">02</div><div class="finding-title">The Coverage Gap</div><div class="finding-body">Open-weight models account for an estimated 20 to 30% of all AI usage, and when users run these models on their own hardware, no usage statistics are generated. Any system anchored solely on frontier lab data is structurally blind to this segment.</div></div>
       <div class="finding-card"><div class="finding-num">03</div><div class="finding-title">The Single-Lab Skew</div><div class="finding-body">Coding-task share differs by a factor of nine between Claude (37%) and ChatGPT (4.2%). Relying on one provider's data as ground truth creates a distorted picture of what work AI is absorbing across the economy.</div></div>
       <div class="finding-card"><div class="finding-num">04</div><div class="finding-title">Canada's Survey Gaps</div><div class="finding-body">Labour Force Survey cells are too small to detect cohort-level shocks, and the Census operates on a five-year cycle. Neither was designed for a labour market that can shift in months. Payroll data closes this gap.</div></div>
@@ -406,16 +386,15 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
     <h2 style="color:#fff">Evidence Behind the Design</h2>
   </div>
   <div class="data-grid">
-    <!-- Donut: coverage gap -->
     <div class="data-card">
       <div class="data-card-title">Coverage Gap: What Frontier Labs Can See</div>
       <div class="donut-wrap">
         <svg width="130" height="130" viewBox="0 0 130 130">
           <circle cx="65" cy="65" r="50" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="16"/>
-          <!-- 75% visible = 0.75 * 2*pi*50 = 235.6 -->
-          <circle cx="65" cy="65" r="50" fill="none" stroke="#1D9E75" stroke-width="16" stroke-dasharray="235.6 314.16" stroke-dashoffset="78.5" stroke-linecap="round"/>
-          <!-- 25% blind = 0.25 * 314.16 = 78.5 -->
-          <circle cx="65" cy="65" r="50" fill="none" stroke="#E8735A" stroke-width="16" stroke-dasharray="78.5 314.16" stroke-dashoffset="-157" stroke-linecap="round"/>
+          <circle cx="65" cy="65" r="50" fill="none" stroke="#1D9E75" stroke-width="16"
+            stroke-dasharray="235.6 78.5" stroke-dashoffset="78.5" stroke-linecap="round"/>
+          <circle cx="65" cy="65" r="50" fill="none" stroke="#E8735A" stroke-width="16"
+            stroke-dasharray="78.5 235.6" stroke-dashoffset="-157.1" stroke-linecap="round"/>
           <text x="65" y="62" text-anchor="middle" fill="#fff" font-family="JetBrains Mono" font-size="16">70-80%</text>
           <text x="65" y="78" text-anchor="middle" fill="#9DADB4" font-family="Inter" font-size="9">visible</text>
         </svg>
@@ -426,7 +405,6 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
       </div>
       <div class="data-note">Sources: Menlo Ventures (Nov 2025), a16z/OpenRouter (Dec 2025).</div>
     </div>
-    <!-- Bars: single-lab skew -->
     <div class="data-card">
       <div class="data-card-title">Single-Lab Skew: Coding Task Share</div>
       <div class="bar-chart">
@@ -442,7 +420,6 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
       <div class="data-note" style="margin-top:20px">A 9x divergence. An Anthropic-only signal would overstate software automation and understate shifts in customer service and healthcare.</div>
       <div class="data-note">Sources: Anthropic Economic Index (Feb 2025), Chatterji et al. NBER 34255 (Sep 2025).</div>
     </div>
-    <!-- CERB callout -->
     <div class="data-card">
       <div class="data-card-title">The Cost of Not Knowing in Real Time</div>
       <div class="cerb-number">$4.6B</div>
@@ -478,7 +455,6 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
       <div class="rec-card"><span class="rec-num">6</span><span class="rec-text">ESDC should table two sequenced items at the FLMM's Changing Nature of Work and Skills Working Group: an awareness agenda item in late 2026 and a structured working session on means-testing treatment of future AI displacement benefits in mid-2027.</span></div>
       <p class="rec-note">The full report includes detailed implementation plans, timelines, and named counterparts for each recommendation.</p>
     </div>
-    <!-- TIMELINE -->
     <div class="timeline-strip fade-in">
       <div class="timeline-line"></div>
       <div class="timeline-items">
@@ -499,7 +475,13 @@ body{font-family:var(--font-b);font-size:16px;line-height:1.6;color:var(--ink);b
     <div class="fade-in">
       <div class="eyebrow">About</div>
       <h2>About the Author</h2>
-      <p class="about-bio"><strong>Rod Moshtagi</strong> is an MPP candidate at the Harvard Kennedy School and a former consultant at Employment and Social Development Canada (ESDC), where his work focused on labour market information systems and benefit program design.</p>
+      <div style="display:flex;gap:24px;align-items:flex-start;margin-bottom:32px">
+  <img src="headshot.jpg" alt="Rod Moshtagi" style="width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0">
+  <p class="about-bio" style="margin-bottom:0"><strong>Rod Moshtagi</strong> is an MPP candidate at the Harvard Kennedy School and a former consultant at Employment and Social Development Canada (ESDC), where his work focused on labour market information systems and benefit program design.</p>
+      <div class="about-logos">
+        <img src="hks-logo.svg" alt="Harvard Kennedy School">
+        <img src="mila-logo.png" alt="Mila - Quebec Artificial Intelligence Institute">
+      </div>
     </div>
     <div class="about-meta fade-in">
       <div><div class="about-meta-label">Prepared For</div><div class="about-meta-value">Mila &mdash; Quebec Artificial Intelligence Institute</div></div>
@@ -537,7 +519,7 @@ window.addEventListener('scroll',()=>{
   let w,h,nodes=[];
   function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;init()}
   function init(){
-    nodes=[];const count=Math.floor(w*h/12000);
+    nodes=[];const count=Math.floor(w*h/9000);
     const colors=['rgba(29,158,117,','rgba(232,115,90,','rgba(255,255,255,'];
     for(let i=0;i<count;i++){
       nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*2+1,color:colors[Math.floor(Math.random()*3)],alpha:Math.random()*.15+.05});
@@ -573,7 +555,6 @@ window.addEventListener('scroll',()=>{
     const idx=Math.min(2,Math.floor(progress*3));
     slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
     dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
-    // Animate occupation bars when slide 1 appears
     if(idx===1&&lastIdx!==1){
       document.querySelectorAll('#occBars .occ-fill').forEach(b=>{b.style.width=b.dataset.w});
     }
@@ -585,21 +566,31 @@ window.addEventListener('scroll',()=>{
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 
-// FINDINGS: CLICKABLE DOTS + ARROWS (no auto-scroll)
+// FINDINGS: CLICKABLE DOTS + ARROWS
 (function(){
   const track=document.getElementById('findingsTrack');
   const dots=document.querySelectorAll('.findings-dot');
   const cards=document.querySelectorAll('.finding-card');
   let currentIdx=0;
+  const leftBtn=document.getElementById('findingsLeft');
+  const rightBtn=document.getElementById('findingsRight');
+  function updateArrows(){
+    leftBtn.style.opacity=currentIdx===0?'0':'1';
+    leftBtn.style.pointerEvents=currentIdx===0?'none':'auto';
+    rightBtn.style.opacity=currentIdx>=cards.length-1?'0':'1';
+    rightBtn.style.pointerEvents=currentIdx>=cards.length-1?'none':'auto';
+  }
   function scrollToCard(idx){
     if(idx<0||idx>=cards.length)return;
     currentIdx=idx;
-    track.scrollTo({left:cards[idx].offsetLeft-60,behavior:'smooth'});
+    track.scrollTo({left:cards[idx].offsetLeft-80,behavior:'smooth'});
     dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+    updateArrows();
   }
   dots.forEach(d=>d.addEventListener('click',()=>scrollToCard(parseInt(d.dataset.index))));
-  document.getElementById('findingsLeft').addEventListener('click',()=>scrollToCard(Math.max(0,currentIdx-1)));
-  document.getElementById('findingsRight').addEventListener('click',()=>scrollToCard(Math.min(cards.length-1,currentIdx+1)));
+  leftBtn.addEventListener('click',()=>scrollToCard(Math.max(0,currentIdx-1)));
+  rightBtn.addEventListener('click',()=>scrollToCard(Math.min(cards.length-1,currentIdx+1)));
+  updateArrows();
   track.addEventListener('scroll',()=>{
     const p=track.scrollLeft/(track.scrollWidth-track.clientWidth);
     const idx=Math.min(5,Math.floor(p*6));
